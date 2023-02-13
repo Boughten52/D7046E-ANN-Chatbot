@@ -1,7 +1,5 @@
 # Meeting notes
 
-***
-
 ### 2023-02-20
 #### Participants: x
 x
