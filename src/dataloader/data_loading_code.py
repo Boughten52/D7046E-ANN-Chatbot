@@ -1,27 +1,21 @@
 import torch
-import torch.nn as nn
-import torch.optim as optim
-import torch.nn.functional as F
-from torch.utils.data import TensorDataset, DataLoader
 import numpy as np
-from matplotlib import pyplot
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.corpus import stopwords
 from nltk import word_tokenize
-from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, classification_report
 
 
-def preprocess_pandas(data, columns):
-    df_ = pd.DataFrame(columns=columns)
-    data['Sentence'] = data['Sentence'].str.lower()
-    data['Sentence'] = data['Sentence'].replace('[a-zA-Z0-9-_.]+@[a-zA-Z0-9-_.]+', '', regex=True)  # remove emails
-    data['Sentence'] = data['Sentence'].replace('((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.|$)){4}', '',
-                                                regex=True)  # remove IP address
-    data['Sentence'] = data['Sentence'].str.replace('[^\w\s]', '')  # remove special characters
-    data['Sentence'] = data['Sentence'].replace('\d', '', regex=True)  # remove numbers
-    for index, row in data.iterrows():
+def preprocess_pandas(_data, _columns):
+    df_ = pd.DataFrame(columns=_columns)
+    _data['Sentence'] = _data['Sentence'].str.lower()
+    _data['Sentence'] = _data['Sentence'].replace('[a-zA-Z0-9-_.]+@[a-zA-Z0-9-_.]+', '', regex=True)  # remove emails
+    _data['Sentence'] = _data['Sentence'].replace('((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.|$)){4}', '',
+                                                  regex=True)  # remove IP address
+    _data['Sentence'] = _data['Sentence'].str.replace('[^\w\s]', '')  # remove special characters
+    _data['Sentence'] = _data['Sentence'].replace('\d', '', regex=True)  # remove numbers
+    for index, row in _data.iterrows():
         word_tokens = word_tokenize(row['Sentence'])
         filtered_sent = [w for w in word_tokens if not w in stopwords.words('english')]
         df_ = df_.append({
@@ -29,7 +23,7 @@ def preprocess_pandas(data, columns):
             "Class": row['Class'],
             "Sentence": " ".join(filtered_sent[0:])
         }, ignore_index=True)
-    return data
+    return _data
 
 
 # If this is the primary file that is executed (ie not an import of another file)
