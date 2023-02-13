@@ -17,3 +17,4 @@ x
   * Structure the project and start migrating code from the exercises.
 * We meet during the scheduled project sessions on Thursdays, ready to present progress.
 * Booked Mondays at 9 am (CET) for weekly meetings.
+* Use the Discord server as a discussion forum for all kinds of questions.
