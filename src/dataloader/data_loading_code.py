@@ -56,7 +56,8 @@ class DataLoader:
         validation_data = word_vectorizer.transform(validation_data)
         self.validation_data = validation_data.todense()
 
-        self.vocab_size = len(word_vectorizer.vocabulary_)
+        self.vocabulary = word_vectorizer.vocabulary_
+        self.vocab_size = len(self.vocabulary)
         self.train_x_tensor = torch.from_numpy(np.array(self.training_data)).type(torch.FloatTensor)
         self.train_y_tensor = torch.from_numpy(np.array(training_labels)).long()
         self.validation_x_tensor = torch.from_numpy(np.array(self.validation_data)).type(torch.FloatTensor)
