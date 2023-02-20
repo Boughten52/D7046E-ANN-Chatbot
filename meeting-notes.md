@@ -1,8 +1,26 @@
 # Meeting notes
 
-### 2023-02-20
+### 2023-02-23
 #### Participants: x
 x
+
+***
+
+### 2023-02-20
+#### Participants: All
+* Current progress:
+  * Most of us has now completed ANN exercise 2 which is useful for the project.
+  * We presented some findings such as the PyTorch Chatbot Tutorial and the Cornell Movie-Dialogs Corpus.
+  * Jonatan showed the project issues, project file structure and how to import packets in Python.
+* Next steps:
+  * Create a vocabulary for storing tokens and indices (Jonatan)
+  * Implement word embedder (Georgios and Dimitra)
+  * Start implementing and training the network (Folke and Jonatan)
+  * We will use ANN exercise 2 and the PyTorch Chatbot Tutorial as help
+  * The network will be trained on the Amazon reviews and/or the Cornell Movie-Dialogs Corpus.
+* Next meeting:
+  * 2023-02-23 during or after the scheduled project session.
+  * We will discuss our progress and how to proceed.
 
 ***
 
