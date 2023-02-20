@@ -13,4 +13,4 @@ def bow_embedder(tensor, vocab_length):
         embedding[index] += 1
     return embedding
 
-# TODO: We probably don't want to use the BoW embedder for this project, and instead we should implement Word2Vec.
+# TODO: We probably don't want to use the BoW embedder for this project, and should instead implement Word2Vec.

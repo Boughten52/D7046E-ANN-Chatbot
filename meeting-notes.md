@@ -9,7 +9,7 @@ x
 ### 2023-02-20
 #### Participants: All
 * Current progress:
-  * Most of us has now completed ANN exercise 2 which is useful for the project.
+  * Most of us have now completed ANN exercise 2 which is useful for the project.
   * We presented some findings such as the PyTorch Chatbot Tutorial and the Cornell Movie-Dialogs Corpus.
   * Jonatan showed the project issues, project file structure and how to import packets in Python.
 * Next steps:
