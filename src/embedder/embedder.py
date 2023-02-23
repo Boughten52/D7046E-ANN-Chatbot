@@ -1,16 +1,26 @@
 import torch
+import re
 
 
-# If you want a function or class to be available in another Python file you type "from .embedder import NAME" in the
-# __init__.py file in this directory.
-# In the file where you want to use it you type "import embedder", and to then for example call a function
-# you type "embedder.FUNCTION_NAME()".
-def bow_embedder(tensor, vocab_length):
-    """Takes a tensor and a vocabulary length, and returns the BoW embedding of the tensor"""
-    tensor = tensor.long()
-    embedding = torch.zeros(vocab_length)
-    for index in tensor:
-        embedding[index] += 1
+def bow_embedder(text, vocabulary):
+    """Takes any sentence and vocabulary with the token2index and index2token structure, returns the BoW embedding"""
+
+    # Remove special characters, make lower case and split sentence
+    pattern = r'[^a-zA-Z0-9\s]'
+    text = re.sub(pattern, '', text)
+    text = text.lower()
+    text = text.split(" ")
+
+    unrecognized_words = []
+
+    embedding = torch.zeros(len(vocabulary))
+    for word in text:
+        if word in vocabulary.token2index.keys():
+            embedding[vocabulary.token2index[word]] += 1
+        else:
+            unrecognized_words.append(word)
+
+    if len(unrecognized_words) > 0:
+        print("When embedding, these words were not recognized:", unrecognized_words)
+
     return embedding
-
-# TODO: We probably don't want to use the BoW embedder for this project, and should instead implement Word2Vec.

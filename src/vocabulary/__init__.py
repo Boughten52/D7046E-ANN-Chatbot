@@ -1,1 +1,1 @@
-from .vocabulary import Vocabulary
+from .vocabulary import AmazonVocabulary

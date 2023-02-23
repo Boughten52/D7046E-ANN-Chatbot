@@ -16,7 +16,7 @@ def preprocess_pandas(_data, _columns):
     _data['Sentence'] = _data['Sentence'].str.replace('[^\w\s]', '', regex=True)  # remove special characters
     _data['Sentence'] = _data['Sentence'].replace('\d', '', regex=True)  # remove numbers
 
-    # THIS CODE UPDATES A VARIABLE THAT IS NEVER USED
+    # THIS CODE UPDATES A VARIABLE (df_) THAT IS NEVER USED(?)
     # for index, row in _data.iterrows():
     #     word_tokens = word_tokenize(row['Sentence'])
     #     filtered_sent = [w for w in word_tokens if not w in stopwords.words('english')]
@@ -28,7 +28,7 @@ def preprocess_pandas(_data, _columns):
     return _data
 
 
-class DataLoader:
+class AmazonDataLoader:
     """The code from Canvas for loading a set of Amazon reviews has been placed in a class"""
 
     def __init__(self, file_path):
@@ -65,4 +65,4 @@ class DataLoader:
 
 
 if __name__ == '__main__':
-    loader = DataLoader("amazon_cells_labelled.txt")
+    loader = AmazonDataLoader("amazon_cells_labelled.txt")

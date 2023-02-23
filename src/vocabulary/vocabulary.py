@@ -1,20 +1,19 @@
-# TODO: This vocabulary is the same as in ANN exercise 2. It's not yet compatible with the dataloader for
-#       amazon_cells_labelled.txt.
-class Vocabulary:
+from src import dataloader
+
+
+class AmazonVocabulary:
     """Class that contains a vocabulary as two dictionaries (token2index, index2token)"""
 
-    def __init__(self, corpus):
-        """Takes a corpus and tokenizes it"""
-        current_index = 0
+    def __init__(self):
+        """Creates a vocabulary of the Amazon reviews"""
+        loader = dataloader.AmazonDataLoader("dataloader/amazon_cells_labelled.txt")
+        amazon_vocabulary = loader.vocabulary
         self.token2index = {}
         self.index2token = {}
-        for text in corpus:
-            tokens = text.split()
-            for token in tokens:
-                if token not in self.token2index:
-                    self.token2index[token] = current_index
-                    self.index2token[current_index] = token
-                    current_index += 1
+        for token in amazon_vocabulary.keys():
+            index = amazon_vocabulary[token]
+            self.token2index[token] = index
+            self.index2token[index] = token
 
     def get_index(self, token):
         """Takes a token and returns its index"""

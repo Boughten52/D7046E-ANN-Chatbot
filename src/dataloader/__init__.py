@@ -1,1 +1,1 @@
-from .data_loading_code import DataLoader
+from .amazon_dataloader import AmazonDataLoader

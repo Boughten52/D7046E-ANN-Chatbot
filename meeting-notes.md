@@ -1,8 +1,25 @@
 # Meeting notes
 
-### 2023-02-23
+### 2023-02-27
 #### Participants: x
 x
+
+***
+
+### 2023-02-23
+#### Participants: All
+* Current progress:
+  * Loading the Amazon reviews, creating a vocabulary from them and the BoW embedder are completed.
+* Next steps:
+  * We agreed to keep the project simple, so we know that we can manage it in the given timeframe.
+  * We will wait with the Movie-Dialogs Corpus and stick to the Amazon reviews for now.
+  * The idea is to train the model on the reviews to recognize if user input is positive, negative or somewhere in between.
+  * Responses to a prediction will be hard coded.
+  * We can later make the bot more interactive by responding to greetings, remembering the user's name etc.
+  * Now we are ready to implement actual training of the network and create some responses for the bot to choose from.
+* Next meeting:
+  * 2023-02-27 (8:30 AM CET).
+  * Hopefully the network will be done by then, and we can start working with user-bot interaction.
 
 ***
 
