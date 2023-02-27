@@ -1,8 +1,23 @@
 # Meeting notes
 
-### 2023-02-27
+### 2023-03-02
 #### Participants: x
 x
+
+***
+
+### 2023-02-27
+#### Participants: All
+* Current progress:
+  * Rework of the provided dataloader code from Canvas.
+  * The code now splits the data into training and validation vectors that are ready to be fed into the network.
+* Next steps:
+  * Train the network.
+  * Implement saving and loading of the network.
+  * Have the bot make predictions and choose from hardcoded responses.
+* Next meeting:
+  * 2023-03-02 during/after the scheduled project session.
+  * Discuss how we can further improve the bot with more than binary classifications and further interactions.
 
 ***
 
