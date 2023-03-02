@@ -1,0 +1,48 @@
+{
+  "classes": [
+    {
+      "label": "positive",
+      "responses": [
+        "I'm happy that you're positive!",
+        "Great to hear!",
+        "That makes me happy!",
+        "Awesome!"
+      ]
+    },
+    {
+      "label": "negative",
+      "responses": [
+        "I'm sorry to hear that",
+        "I'm sorry",
+        "Sorry for that",
+        "My apologies"
+      ]
+    },
+    {
+      "label": "greeting",
+      "responses": [
+        "Hi!",
+        "Hello!",
+        "Hi there!",
+        "Hello there!"
+      ]
+    },
+    {
+      "label": "goodbye",
+      "responses": [
+        "Bye!",
+        "Goodbye!",
+        "Take care!",
+        "Have a nice day!"
+      ]
+    },
+    {
+      "label": "thanks",
+      "responses": [
+        "You're welcome!",
+        "My pleasure!",
+        "No problem!"
+      ]
+    }
+  ]
+}
