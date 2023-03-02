@@ -998,3 +998,32 @@ What a piece of junk.. I lose more calls on this phone.	0
 Item Does Not Match Picture.	0
 The only thing that disappoint me is the infra red port (irda).	0
 You can not answer calls with the unit, never worked once!	0
+Hello	2
+Hi	2
+Hi!	2
+hi	2
+Hi friend	2
+greetings	2
+Hello there	2
+Hey there	2
+Hey	2
+Hi buddy	2
+Hey pal	2
+Hello friend	2
+Hello sir	2
+Hello mam	2
+Heyo	2
+Hi there	2
+Hey you	2
+Greetings!	2
+Greetings friend	2
+Hello bot	2
+Greetings bot	2
+Greetings chatbot	2
+Well hello	2
+Hello hello	2
+Hi! Nice to meet you!	2
+Hello! Pleasure meeting you	2
+Well met	2
+hello	2
+hello!	2
