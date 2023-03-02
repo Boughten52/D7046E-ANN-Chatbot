@@ -1027,3 +1027,164 @@ Hello! Pleasure meeting you	2
 Well met	2
 hello	2
 hello!	2
+Howdy	2
+Yo	2
+What's up	2
+Sup	2
+Hiya	2
+Salutations	2
+G'day	2
+S'up	2
+Wassup	2
+Heya	2
+Long time no see	2
+Hi there, stranger	2
+What's happening?	2
+How goes it?	2
+Hey, sunshine!	2
+Hey, champ!	2
+Howdy-do	2
+What's cooking?	2
+Hiya, partner	2
+Greetings and salutations	2
+How's tricks?	2
+Hey, big guy/gal	2
+What's the word?	2
+Hello, hello, hello!	2
+Hey, beautiful/handsome	2
+Morning/Afternoon/Evening, all	2
+What's crackin'?	2
+How's your day going?	2
+Howdy, y'all	2
+Hey, rockstar	2
+Hey, genius	2
+Hey, boss	2
+Hi there, bestie	2
+Hey, hot stuff	2
+Hey, cool cat	2
+Hey, lovely	2
+Hey, superstar	2
+Hi there, honey	2
+Hey, cutie	2
+Hey, stud	2
+Bye	3
+Goodbye	3
+See you later	3
+See ya	3
+See you soon	3
+Later	3
+Catch you later	3
+Take care	3
+Farewell	3
+So long	3
+Have a good one	3
+Have a great day	3
+Have a good weekend	3
+Have a good night	3
+Have a nice day	3
+Have a nice evening	3
+Talk to you later	3
+Until next time	3
+Peace out	3
+Adios	3
+Toodle-oo	3
+Cheerio	3
+Hasta la vista	3
+Ciao	3
+Ta-ta	3
+Bye-bye	3
+Sayonara	3
+Goodnight	3
+Sweet dreams	3
+Sleep well.	3
+See you around	3
+Take it easy	3
+See you in a bit	3
+All the best	3
+Bye for now	3
+Until we meet again	3
+Peace and love	3
+Be well	3
+Keep in touch	3
+Later, gator	3
+In a while, crocodile	3
+Bye-bye for now	3
+It was nice seeing/talking to you	3
+Have a great week	3
+Have a great weekend	3
+Have a safe trip	3
+Drive safely	3
+Good luck	3
+Take care of yourself	3
+Stay safe	3
+Stay in touch	3
+Enjoy the rest of your day	3
+Enjoy your evening	3
+Have a great night's sleep	3
+See you next time	3
+Bon voyage	3
+Keep smiling	3
+Keep shining	3
+It's been a pleasure	3
+Take care and stay healthy.	3
+Thanks	4
+Thank you very much	4
+Many thanks	4
+Thanks a bunch	4
+I really appreciate it	4
+You're the best	4
+You're a lifesaver	4
+I owe you one	4
+Much obliged	4
+I can't thank you enough	4
+You're so kind	4
+That's so thoughtful of you	4
+Thanks for your help	4
+Thanks for your time	4
+I'm grateful for your assistance	4
+That's very generous of you	4
+Thank you kindly	4
+You're amazing	4
+You're a star	4
+I'm so thankful for your help	4
+I'm indebted to you	4
+Thank you for your support	4
+You rock!	4
+Thank you for being there for me	4
+You're a true friend	4
+You're a gem	4
+You're awesome	4
+I appreciate your kindness	4
+I'm so grateful for your generosity	4
+I'm so thankful for you.	4
+I'm very grateful	4
+That's so nice of you	4
+I'm so appreciative	4
+Thank you so much for everything	4
+You're a wonderful person	4
+You've made my day	4
+You're a true lifesaver	4
+I don't know what I would do without you	4
+You're a blessing	4
+Thank you for going above and beyond	4
+You're a superstar	4
+You have my heartfelt thanks	4
+You're a champion	4
+You're simply amazing	4
+I'm deeply grateful	4
+You're a hero	4
+You're a rockstar	4
+You're a miracle worker	4
+You're a true professional	4
+You're a shining example	4
+Thank you from the bottom of my heart	4
+You're a ray of sunshine	4
+You're a saint	4
+You're an angel	4
+You're a true inspiration	4
+You're a legend	4
+I couldn't have done it without you	4
+You're the best thing that ever happened to me	4
+Thank you for being an awesome friend.	4
+You're a superstar in my book	4
+Thank you for being an awesome friend.	4
