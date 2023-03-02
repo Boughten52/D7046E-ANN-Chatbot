@@ -56,7 +56,7 @@ class Chatbot:
         probabilities = torch.softmax(output, dim=1)
         probability = probabilities[0][predicted.item()]
 
-        if probability.item() > 0.7:
+        if probability.item() > 0.8:
             for sentence_class in self.classes["classes"]:
                 if label == sentence_class["label"]:
                     self.response = random.choice(sentence_class["responses"])

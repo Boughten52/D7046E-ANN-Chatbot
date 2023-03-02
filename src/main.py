@@ -28,8 +28,8 @@ def train():
         0: 'negative',
         1: 'positive',
         2: 'greeting',
-        # 3: 'goodbye',
-        # 4: 'thanks'
+        3: 'goodbye',
+        4: 'thanks'
     }
 
     x_train = []
