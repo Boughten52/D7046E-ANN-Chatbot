@@ -12,6 +12,8 @@ class Chatbot:
     """Class that handles input/output by picking a response for a user input"""
 
     def __init__(self):
+        """Loads the saved network and prepares it for input"""
+
         self.exit_conditions = ["exit", "quit"]
         self.user_input = ""
         self.response = "Hi, I'm a Chatbot. Pleased to meet you! Type [exit] or [quit] to stop talking to me."
@@ -38,6 +40,8 @@ class Chatbot:
         print(self.response)
 
     def handle_input(self):
+        """Reads user input, makes a prediction and picks an appropriate response from responses.json"""
+
         self.user_input = input()
         if self.user_input in self.exit_conditions:
             self.response = "The bot has exited"

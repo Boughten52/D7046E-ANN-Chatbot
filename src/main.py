@@ -11,6 +11,8 @@ import ann
 
 
 def train():
+    """Trains the ANN on the Amazon reviews dataset (expanded with greetings, goodbyes and thanks)"""
+
     data = []  # Contains sentence and class pairs (sentence as list of words)
     vocab = set()
     with open("data/amazon_cells_labelled.txt", "r") as f:
@@ -95,6 +97,8 @@ def train():
 
 
 def run():
+    """First asks the user if it wants to train the network or chat, then starts the chat-loop"""
+
     print("Type [bot] to start the chatbot or [train] to train the network:")
     while True:
         user_input = input()

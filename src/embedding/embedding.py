@@ -3,6 +3,8 @@ import numpy as np
 
 
 class ChatBotDataset(Dataset):
+    """Class that saves a dataset in a way so that it can be fed to the PyTorch DataLoader"""
+
     def __init__(self, x, y):
         self.samples = len(x)
         self.x = x
