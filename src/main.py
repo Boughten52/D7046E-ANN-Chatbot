@@ -8,16 +8,24 @@ from nltk.tokenize import word_tokenize
 import chatbot
 import embedding
 import ann
+import nltk
+import model_tester
 
+nltk.download('punkt')
 
 def train():
     """Trains the ANN on the Amazon reviews dataset (expanded with greetings, goodbyes and thanks)"""
 
     data = []  # Contains sentence and class pairs (sentence as list of words)
     vocab = set()
-    with open("data/amazon_cells_labelled.txt", "r") as f:
+
+    crow=0
+    with open("data/coursera_pre_train_10000_tab_0-4.csv", "r") as f:
         reader = csv.reader(f, delimiter="\t")
         for row in reader:
+            crow = crow + 1
+            if crow % 100 == 0:
+                print(f'Rows read: [{crow}]')
             message, label = row
             message = word_tokenize(message)
             message = [word.lower() for word in message if word.isalnum()]
@@ -27,16 +35,20 @@ def train():
     vocab = list(dict.fromkeys(vocab))
     vocab = sorted(list(vocab))  # Contains all words from the file as single words and without duplicates
     all_labels = {
-        0: 'negative',
-        1: 'positive',
-        2: 'greeting',
-        3: 'goodbye',
-        4: 'thanks'
+        0: '1 star',
+        1: '2 stars',
+        2: '3 stars',
+        3: '4 stars',
+        4: '5 stars'
     }
 
     x_train = []
     y_train = []
+    ti = 0
     for (tokenized_sentence, label) in data:
+        ti = ti + 1
+        if ti % 1000 == 0:
+            print(f'Tokenized sentences: [{ti}]')
         bow = embedding.bow_embedder(tokenized_sentence, vocab)
         x_train.append(bow)
         y_train.append(label)
@@ -50,10 +62,10 @@ def train():
     batch_size = 50
     shuffle = True
     input_size = len(vocab)
-    hidden_size = 100
+    hidden_size = 300
     output_size = len(all_labels)
-    learning_rate = 0.001
-    epochs = 1000
+    learning_rate = 0.02
+    epochs = 25
 
     train_loader = DataLoader(dataset=dataset, batch_size=batch_size, shuffle=shuffle)
 
@@ -78,10 +90,7 @@ def train():
             loss.backward()
             optimizer.step()
 
-        print(
-            f'\rEpoch: [{epoch + 1}/{epochs}] - Loss: {loss}',
-            end=''
-        )
+        print(f'Epoch: [{epoch + 1}/{epochs}] - Loss: {loss}')
 
     save_data = {
         "model_state": model.state_dict(),
@@ -92,18 +101,22 @@ def train():
         "all_labels": all_labels
     }
 
-    FILE = "chatbot_ann.pth"
+    FILE = "chatbot_ann_coursera.pth"
     torch.save(save_data, FILE)
 
 
 def run():
     """First asks the user if it wants to train the network or chat, then starts the chat-loop"""
 
-    print("Type [bot] to start the chatbot or [train] to train the network:")
+    print("Type [bot] to start the chatbot or [train / test] to train/test the network:")
     while True:
         user_input = input()
         if user_input.lower() == "train":
             train()
+            return
+        if user_input.lower() == "test":
+            mytester = model_tester.tester()
+            mytester.run_test()
             return
         elif user_input.lower() == "bot":
             break

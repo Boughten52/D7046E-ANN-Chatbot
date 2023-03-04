@@ -19,10 +19,10 @@ class Chatbot:
         self.response = "Hi, I'm a Chatbot. Pleased to meet you! Type [exit] or [quit] to stop talking to me."
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-        with open('data/responses.json', 'r') as f:
+        with open('data/responses_coursera.json', 'r') as f:
             self.classes = json.load(f)
 
-        FILE = "chatbot_ann.pth"
+        FILE = "chatbot_ann_coursera.pth"
         data = torch.load(FILE)
 
         input_size = data["input_size"]
@@ -54,6 +54,7 @@ class Chatbot:
         x = torch.from_numpy(x)
 
         output = self.model(x)
+
         _, predicted = torch.max(output, dim=1)
         label = self.all_labels[predicted.item()]
 
