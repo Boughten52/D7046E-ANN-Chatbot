@@ -20,7 +20,7 @@ def train():
     vocab = set()
 
     crow=0
-    with open("data/coursera_pre_train_10000_tab_0-4.csv", "r") as f:
+    with open("data/coursera_pre_strat_train_1800.csv", "r") as f:
         reader = csv.reader(f, delimiter="\t")
         for row in reader:
             crow = crow + 1
@@ -62,10 +62,10 @@ def train():
     batch_size = 50
     shuffle = True
     input_size = len(vocab)
-    hidden_size = 300
+    hidden_size = 200
     output_size = len(all_labels)
-    learning_rate = 0.02
-    epochs = 25
+    learning_rate = 0.1
+    epochs = 20
 
     train_loader = DataLoader(dataset=dataset, batch_size=batch_size, shuffle=shuffle)
 

@@ -35,7 +35,9 @@ class tester:
         print("Result : _______")
 
     def run_test(self):
-        with open("data/coursera_pre_valid_2500_tab_0-4.csv", "r") as t:
+        corrects = 0
+        totals = 0
+        with open("data/coursera_pre_strat_test_450.csv", "r") as t:
             reader = csv.reader(t, delimiter="\t")
             for row in reader:
                 message, label_true = row
@@ -50,7 +52,16 @@ class tester:
 
                 print(message)
                 print(f'Ture Class: [{label_true}] / predicted : [{predicted.item()}]')
+                # print(type(label_true))
+                # print(type(predicted.item()))
+                totals = totals + 1
+                if int(label_true) == predicted.item():
+                    corrects = corrects + 1
 
+        accuracy = corrects / totals
+        print(f'Correct predictions: [{corrects}]')
+        print(f'Number of predictions: [{totals}]')
+        print(f'Accuracy: [{accuracy*100}]')
 
                 # label = self.all_labels[predicted.item()]
                 #
