@@ -17,7 +17,7 @@ x
   * Evaluate the network and tune parameters to get better results.
   * Prepare for presentation on Thursday 2023-03-09.
 * Next meeting:
-  * Wednesday 2023-03-08.
+  * Wednesday 2023-03-08 (9 AM CET).
   * Finish the presentation slides and practise presenting.
 
 ***
