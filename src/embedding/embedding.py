@@ -1,3 +1,6 @@
+import csv
+
+from nltk import word_tokenize
 from torch.utils.data import Dataset
 import numpy as np
 
@@ -15,6 +18,40 @@ class ChatBotDataset(Dataset):
 
     def __len__(self):
         return self.samples
+
+
+def read_file_to_tensor_and_vocab(file_path):
+    data = []  # Contains sentence and class pairs (sentence as list of words)
+    vocab = set()
+
+    crow = 0
+    with open(file_path, "r", encoding="UTF-8") as f:
+        reader = csv.reader(f, delimiter="\t")
+        for row in reader:
+            crow = crow + 1
+            if crow % 100 == 0:
+                print(f'Rows read: [{crow}]')
+            message, label = row
+            message = word_tokenize(message)
+            message = [word.lower() for word in message if word.isalnum()]
+            data.append((message, int(label)))
+            vocab.update(message)
+
+    vocab = list(dict.fromkeys(vocab))
+    vocab = sorted(list(vocab))  # Contains all words from the file as single words and without duplicates
+
+    x_train = []
+    y_train = []
+    ti = 0
+    for (tokenized_sentence, label) in data:
+        ti = ti + 1
+        if ti % 1000 == 0:
+            print(f'Tokenized sentences: [{ti}]')
+        bow = bow_embedder(tokenized_sentence, vocab)
+        x_train.append(bow)
+        y_train.append(label)
+
+    return np.array(x_train), np.array(y_train), vocab
 
 
 def bow_embedder(tokenized_sentence, vocab):

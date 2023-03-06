@@ -1,1 +1,1 @@
-from .tester import tester
+from .tester import Tester

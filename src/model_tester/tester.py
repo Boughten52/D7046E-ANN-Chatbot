@@ -1,22 +1,35 @@
 import csv
 import torch
 import json
-from nltk.tokenize import word_tokenize
-from sys import exit
 
 from src.ann import ChatBotANN
 from src.embedding import bow_embedder
 
-class tester:
-    """Class that handles input/output by picking a response for a user input"""
 
-    def __init__(self):
+class Tester:
+    """Class that tests the network"""
+
+    def __init__(self, dataset_type):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-        with open('data/responses_coursera.json', 'r', encoding="UTF-8") as f:
+        match dataset_type:
+            case "coursera":
+                responses_path = "data/responses_coursera.json"
+                network_path = "chatbot_ann_coursera.pth"
+                self.test_set_path = "data/coursera_pre_strat_test_450.csv"
+            case "amazon":
+                responses_path = "data/responses.json"
+                network_path = "chatbot_ann.pth"
+                self.test_set_path = "data/amazon_cells_labelled_test.txt"
+            case _:
+                responses_path = ""
+                network_path = ""
+                self.test_set_path = ""
+
+        with open(responses_path, 'r', encoding="UTF-8") as f:
             self.classes = json.load(f)
 
-        FILE = "chatbot_ann_coursera.pth"
+        FILE = network_path
         data = torch.load(FILE)
 
         input_size = data["input_size"]
@@ -30,14 +43,10 @@ class tester:
         self.model.load_state_dict(model_state)
         self.model.eval()
 
-
-    def result(self):
-        print("Result : _______")
-
     def run_test(self):
-        corrects = 0
-        totals = 0
-        with open("data/coursera_pre_strat_test_450.csv", "r", encoding="UTF-8") as t:
+        correct = 0
+        total = 0
+        with open(self.test_set_path, "r", encoding="UTF-8") as t:
             reader = csv.reader(t, delimiter="\t")
             for row in reader:
                 message, label_true = row
@@ -51,23 +60,12 @@ class tester:
                 _, predicted = torch.max(output, dim=1)
 
                 print(message)
-                print(f'Ture Class: [{label_true}] / predicted : [{predicted.item()}]')
-                # print(type(label_true))
-                # print(type(predicted.item()))
-                totals = totals + 1
+                print(f'True Class: [{label_true}] / predicted : [{predicted.item()}]')
+                total = total + 1
                 if int(label_true) == predicted.item():
-                    corrects = corrects + 1
+                    correct = correct + 1
 
-        accuracy = corrects / totals
-        print(f'Correct predictions: [{corrects}]')
-        print(f'Number of predictions: [{totals}]')
-        print(f'Accuracy: [{accuracy*100}]')
-
-                # label = self.all_labels[predicted.item()]
-                #
-                # print(message)
-                # print(label_true)
-                # print(label)
-
-
-
+        accuracy = correct / total
+        print(f'Correct predictions: [{correct}]')
+        print(f'Number of predictions: [{total}]')
+        print(f'Accuracy: [{accuracy * 100}] %')

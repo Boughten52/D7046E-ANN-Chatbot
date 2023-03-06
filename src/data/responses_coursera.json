@@ -3,45 +3,31 @@
     {
       "label": "1 star",
       "responses": [
-        "Response 1 star No 1",
-        "Response 1 star No 2",
-        "Response 1 star No 3",
-        "Response 1 star No 4"
+        "I predict your review to be 1 star"
       ]
     },
     {
       "label": "2 stars",
       "responses": [
-        "Response 2 stars No 1",
-        "Response 2 stars No 2",
-        "Response 2 stars No 3",
-        "Response 2 stars No 4"
+        "I predict your review to be 2 stars"
       ]
     },
     {
       "label": "3 stars",
       "responses": [
-        "Response 3 stars No 1",
-        "Response 3 stars No 2",
-        "Response 3 stars No 3",
-        "Response 3 stars No 4"
+        "I predict your review to be 3 stars"
       ]
     },
     {
       "label": "4 stars",
       "responses": [
-        "Response 4 stars No 1",
-        "Response 4 stars No 2",
-        "Response 4 stars No 3",
-        "Response 4 stars No 4"
+        "I predict your review to be 4 stars"
       ]
     },
     {
       "label": "5 stars",
       "responses": [
-        "Response 5 stars No 1",
-        "Response 5 stars No 2",
-        "Response 5 stars No 3"
+        "I predict your review to be 5 stars"
       ]
     }
   ]

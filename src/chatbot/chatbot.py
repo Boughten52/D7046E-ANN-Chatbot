@@ -11,7 +11,7 @@ from src.embedding import bow_embedder
 class Chatbot:
     """Class that handles input/output by picking a response for a user input"""
 
-    def __init__(self):
+    def __init__(self, dataset_type):
         """Loads the saved network and prepares it for input"""
 
         self.exit_conditions = ["exit", "quit"]
@@ -19,10 +19,21 @@ class Chatbot:
         self.response = "Hi, I'm a Chatbot. Pleased to meet you! Type [exit] or [quit] to stop talking to me."
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-        with open('data/responses_coursera.json', 'r') as f:
+        match dataset_type:
+            case "coursera":
+                responses_path = "data/responses_coursera.json"
+                network_path = "chatbot_ann_coursera.pth"
+            case "amazon":
+                responses_path = "data/responses.json"
+                network_path = "chatbot_ann.pth"
+            case _:
+                responses_path = ""
+                network_path = ""
+
+        with open(responses_path, 'r') as f:
             self.classes = json.load(f)
 
-        FILE = "chatbot_ann_coursera.pth"
+        FILE = network_path
         data = torch.load(FILE)
 
         input_size = data["input_size"]
@@ -61,7 +72,7 @@ class Chatbot:
         probabilities = torch.softmax(output, dim=1)
         probability = probabilities[0][predicted.item()]
 
-        if probability.item() > 0.8:
+        if probability.item() > 0.7:
             for sentence_class in self.classes["classes"]:
                 if label == sentence_class["label"]:
                     self.response = random.choice(sentence_class["responses"])
