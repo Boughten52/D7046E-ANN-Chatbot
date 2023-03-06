@@ -1,8 +1,24 @@
 # Meeting notes
 
-### 2023-03-02
+### 2023-03-08
 #### Participants: x
 x
+
+***
+
+### 2023-03-06
+#### Participants: All
+* Note:
+  * We skipped the meeting on 2023-03-02 and moved it to this date.
+* Current progress:
+  * A fully working chatbot trained on the Amazon reviews. It can also handle greetings, goodbyes and thanks.
+  * Experimentation with larger datasets that has more labels (Coursera reviews with 0 - 5 stars).
+* Next steps:
+  * Evaluate the network and tune parameters to get better results.
+  * Prepare for presentation on Thursday 2023-03-09.
+* Next meeting:
+  * Wednesday 2023-03-08.
+  * Finish the presentation slides and practise presenting.
 
 ***
 

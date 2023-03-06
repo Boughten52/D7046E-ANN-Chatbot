@@ -13,7 +13,7 @@ class tester:
     def __init__(self):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-        with open('data/responses_coursera.json', 'r') as f:
+        with open('data/responses_coursera.json', 'r', encoding="UTF-8") as f:
             self.classes = json.load(f)
 
         FILE = "chatbot_ann_coursera.pth"
@@ -37,7 +37,7 @@ class tester:
     def run_test(self):
         corrects = 0
         totals = 0
-        with open("data/coursera_pre_strat_test_450.csv", "r") as t:
+        with open("data/coursera_pre_strat_test_450.csv", "r", encoding="UTF-8") as t:
             reader = csv.reader(t, delimiter="\t")
             for row in reader:
                 message, label_true = row

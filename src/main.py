@@ -11,7 +11,6 @@ import ann
 import nltk
 import model_tester
 
-nltk.download('punkt')
 
 def train():
     """Trains the ANN on the Amazon reviews dataset (expanded with greetings, goodbyes and thanks)"""
@@ -20,7 +19,7 @@ def train():
     vocab = set()
 
     crow=0
-    with open("data/coursera_pre_strat_train_1800.csv", "r") as f:
+    with open("data/coursera_pre_strat_train_1800.csv", "r", encoding="UTF-8") as f:
         reader = csv.reader(f, delimiter="\t")
         for row in reader:
             crow = crow + 1
