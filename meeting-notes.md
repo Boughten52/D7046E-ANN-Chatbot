@@ -1,8 +1,12 @@
 # Meeting notes
 
 ### 2023-03-08
-#### Participants: x
-x
+#### Participants: All
+* Current progress:
+  * Presentation slides are finished and the group is ready to present.
+  * No further features have been implemented to the chatbot. All training and testing runs are completed.
+* Next steps:
+  * Present our project.
 
 ***
 
